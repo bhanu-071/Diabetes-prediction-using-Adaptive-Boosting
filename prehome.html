@@ -1,0 +1,52 @@
+<html>
+  <head>
+    <title></title>
+   <link rel="stylesheet" href="{{url_for('static', filename='styles/formstyle.css')}}">
+   <style>
+.bg-img {
+  /* The image used */
+  background-image: url('static/images/depositphotos_422409520-stock-photo-world-diabetes-day-free-glucose.jpg');
+  /* Center and scale the image nicely */
+  background-attachment:absolute;
+  margin:0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height:170%;
+  width:100%;
+}
+</style>
+  </head>
+  <body>
+   <div class="bg-img"> 
+    
+    <form action="/bmipedigree" method='post' class="container" enctype="multipart/form-data">
+        <center><h1>Pedigree & BMI Calculations</h1></center>
+        <label for="parent-sibling">Number of diabetes affected Parent or Sibling:</label>
+        <input type="text" id="parent-sibling" name="parent-sibling" autocomplete="off"><br/><br/>
+        
+        <label for="grandparent-aunt-uncle">Number of diabetes affected Grandparent, Aunt/Uncle, or Half-Sibling:</label>
+        <input type="text" id="grandparent-aunt-uncle" name="grandparent-aunt-uncle" autocomplete="off"><br/><br/>
+        
+        <label for="first-cousin">Number of diabetes affected First Cousin:</label>
+        <input type="text" id="first-cousin" name="first-cousin" autocomplete="off"><br/><br/>
+
+          <label for="gender">Gender:</label>
+      <select id="gender" name="gender" style="background-color: #f1f1f1; width:100%; padding: 15px;  margin: 5px 0 22px 0;" required>
+        <option value=""><center>Select one</center></option>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option>
+      </select><br/><br/>
+
+      <label for="weight">Weight (kg):</label>
+      <input type="text" id="weight" name="weight" autocomplete="off" required><br/><br/>
+      
+      <label for="height">Height (cm):</label>
+      <input type="text" id="height" name="height" autocomplete="off" required><br/><br/>
+      <button type="reset" class="btn" style="float:left; width:40%; font-size:25px;">clear</button> 
+      <button type="submit" class="btn" style="float:right; width:40%; font-size:25px;">Next</button>
+ 
+    </form>
+    </div>
+    </body>
+</html>

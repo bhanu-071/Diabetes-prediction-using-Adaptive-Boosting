@@ -1,0 +1,15 @@
+<html>
+<body>
+{% if prediction == 1.0 %}
+<center>
+<h2 style='color:blue;'>chances of having diabetes is high.</h2>
+<img src="{{url_for('static', filename='images/stay-strong-fist-pump.gif')}}" />
+</center>
+{% elif prediction == 0 %}
+<center>
+<h2 style='color:blue;'>you are Healthy.</h2>
+<img src="{{url_for('static', filename='images/AptQuaintFowl-max-1mb.gif')}}" />
+</center>
+{% endif %}
+</body>
+</html>

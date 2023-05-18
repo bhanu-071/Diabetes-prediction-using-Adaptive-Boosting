@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>  
+<link rel="stylesheet" href="{{url_for('static', filename='styles/formstyle.css')}}">
+<style>
+.bg-img {
+  /* The image used */
+  background-image: url('static/images/depositphotos_422409520-stock-photo-world-diabetes-day-free-glucose.jpg');
+  /* Center and scale the image nicely */
+  background-attachment:absolute;
+  margin:0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height:170%;
+  width:100%;
+}
+</style>
+</head>
+<body>
+<div class="bg-img">    
+<form action="/predict" method='post' class="container" enctype="multipart/form-data">  
+  <h1> Diabetes Prediction </h1>
+<label for="glucose"> Glucose: </label>        
+<input type="text" name="glucose" required placeholder="Required" autocomplete="off"/><br/><br/>
+{% if gender == "female" %}
+<label for="Pregnancies"> Pregnancies: </label>    
+<input type="text" name="Pregnancies" required placeholder="Required" autocomplete="off"/><br/><br/> 
+{% else %} 
+<label for="Pregnancies"> Pregnancies: </label>    
+<input type="text" name="Pregnancies" required placeholder="Required" value=0 readonly autocomplete="off"/><br/><br/> 
+{% endif %}
+<label for="BMI"> BMI: </label>        
+<input type="text" name="BMI" required placeholder="Required" value={{ bmi }} autocomplete="off"/> <br/><br/> 
+<label for="Diabetes_Pedigree"> Diabetes Pedigree:</label> 
+<input type="text" id="Diabetes_Pedigree" name="Diabetes_Pedigree" value={{ pedigree }} required placeholder="Required" autocomplete="off"/><br/><br/>
+<button type="reset" class="btn" style="float:left; width:40%; font-size:25px;">clear</button> 
+<button type="submit" class="btn" style="float:right; width:40%; font-size:25px;">submit</button> 
+</form>
+</div>  
+</body>  
+</html> 
